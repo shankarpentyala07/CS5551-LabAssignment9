@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+    <style>
+        h3 { color: blue;
+            font-family: "Times New Roman";
+            font-style: italic;
+            text-align: center;
+        }
+        h5 {
+            color: blue;
+            font-family: "Times New Roman";
+            font-style: italic;
+            text-align: center;
+        }
+        body{
+            background: url("img3.jpg ");
+            background-repeat:no-repeat;
+            background-size: cover  ;
+        }
+    </style>
+</head>
+<body ng-app="app">
+<h3> Hi!Get your recipe info!!!</h3>
+<div ng-controller="controller" style="margin-left: 200px;margin-top: 30px">
+
+<input type="text" style="border-radius:20px;padding: 4px;border: 10px;height: 10px;background-color:gray " ng-model="input1"/>
+    <Button ng-click="search()" style="background-color:gray ;border-radius: 20px;padding: 4px;border: 10px;width: 70px;height: 25px">Search</Button></br>
+    <div id="col" style="display: none">
+    <p ng-model="final">
+
+
+        <table BORDER=2 CELLPADDING=6>
+        <TR><TH style="color:black; background:brown" COLSPAN=2>Mash Up Services of Edamam and Google Knowledge API's</TH></TR>
+            <TR><TD style="color: green;width: 110px;font-size: larger;background-color: brown">Total Weight</TD><TD style="color: brown;width: 115px;font-size: larger;text-align: center">{{final.qt}}</TD></TR>
+            <TR><TD style="color: green;width: 110px;font-size: larger;background-color: brown">Calories</TD><TD style="color: brown;width: 115px;font-size: larger;text-align: center">{{final.score}}</TD></TR>
+        </table>
+        <table BORDER=2 CELLPADDING=6>
+
+        <TR><td style="color: brown;width: 115px;font-size: larger;text-align: center"><img src="{{final.image}}"></img></td></TR>
+        </table >
+       <h5>Description:{{final.text1}}</h5>
+        </p>
+        </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
